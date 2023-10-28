@@ -64,4 +64,4 @@ For more detailed instructions, please check out the video tutorial linked below
 
 ## Watch the Video Tutorial
 
-For a complete walkthrough and practical demonstration, check out the video here: [![Realtime Streaming with TCP IP Spark LLM Kafka Elasticsearch.png](assets%2FRealtime%20Streaming%20with%20TCP%20IP%20Spark%20LLM%20Kafka%20Elasticsearch.png)](https://www.youtube.com/watch?v=GqAcTrqKcrY)
+For a complete walkthrough and practical demonstration, check out the video here: [![Realtime Streaming with TCP IP Spark LLM Kafka Elasticsearch.png](assets%2FRealtime%20Streaming%20with%20TCP%20IP%20Spark%20LLM%20Kafka%20Elasticsearch.png)](https://www.youtube.com/watch?v=ETdyFfYZaqU)

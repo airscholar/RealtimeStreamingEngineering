@@ -9,23 +9,16 @@ from config.config import config
 
 def sentiment_analysis(comment) -> str:
     if comment:
-        openai.api_key = config['openai']['api_key']
-        completion = openai.ChatCompletion.create(
+        import openai
+        client = openai.OpenAI(api_key=config['openai']['api_key'])
+        response = client.chat.completions.create(
             model='gpt-3.5-turbo',
-            messages = [
-                {
-                    "role": "system",
-                    "content": """
-                        You're a machine learning model with a task of classifying comments into POSITIVE, NEGATIVE, NEUTRAL.
-                        You are to respond with one word from the option specified above, do not add anything else.
-                        Here is the comment:
-                        
-                        {comment}
-                    """.format(comment=comment)
-                }
+            messages=[
+                {"role": "system", "content": "You are a machine learning model tasked with classifying comments as POSITIVE, NEGATIVE, or NEUTRAL. You should respond with only one of these words, adding nothing else."},
+                {"role": "user", "content": comment}
             ]
         )
-        return completion.choices[0].message['content']
+        return response.choices[0].message.content.strip()
     return "Empty"
 
 def start_streaming(spark):
